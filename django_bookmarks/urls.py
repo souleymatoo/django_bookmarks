@@ -7,5 +7,6 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$|^dashboard$', main_page),
+    url(r'^$', main_page),
+    url(r'^dashboard$', main_page1),
 ]
