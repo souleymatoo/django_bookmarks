@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+  <link href="/site_media/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/site_media/css/metisMenu.min.css" rel="stylesheet">
+  <link href="/site_media/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="login-panel panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Please Sign In</h3>
+        </div>
+        <div class="panel-body">
+          {% if form.has_errors %}
+            <p>Your username and password didn't match.
+              Please try again.</p>
+          {% endif %}
+          <form method="post" action=".">
+            <fieldset>
+              <div class="form-group">
+                <label for="id_username">Username:</label>
+                {{ form.username }}
+{#                <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>#}
+              </div>
+              <div class="form-group">
+                <label for="id_password">Password:</label>
+                {{ form.password }}
+{#                <input class="form-control" placeholder="Password" name="password" type="password" value="">#}
+              </div>
+              {% csrf_token %}
+              <div class="checkbox">
+                <label>
+                  <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                </label>
+              </div>
+              <!-- Change this to a button or input when using this as a form -->
+              <input type="submit" class="btn btn-lg btn-success btn-block" value="login" />
+{#              <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>#}
+              <input type="hidden" name="next" value="/" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/site_media/js/jquery.min.js"></script>
+<script src="/site_media/js/bootstrap.min.js"></script>
+<script src="/site_media/js/metisMenu.min.js"></script>
+<script src="/site_media/js/sb-admin-2.js"></script>
+
+
+</body>
+
+</html>

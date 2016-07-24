@@ -1,0 +1,3 @@
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+    padding: 9px !important;
+}
