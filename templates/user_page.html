@@ -3,7 +3,11 @@
   <title>Django Bookmarks - User: {{ username }}</title>
 </head>
 <body>
+{% if not firstname %}
 <h1>Bookmarks for {{ username }}</h1>
+{% else %}
+<h1>Bookmarks for {{ firstname }} {{ lastname }}</h1>
+{% endif %}
 {% if bookmarks %}
   <ul>
     {% for bookmark in bookmarks %}
